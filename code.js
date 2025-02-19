@@ -10,7 +10,7 @@ function insertionSortReverse(array) {
     let val = array[i];
     let j;
 
-    for (j = i; j < n - 1 && array[j + 1] <= val; j++) {
+    for (j = i; j < n - 1 && array[j + 1] < val; j++) {
       array[j] = array[j + 1];
     }
 
