@@ -1,3 +1,9 @@
+function swap(arr, i1, i2) {
+  const tmp = arr[i1];
+  arr[i1] = arr[i2];
+  arr[i2] = tmp;
+}
+
 function insertionSortReverse(array) {
   const n = array.length;
 
@@ -5,15 +11,10 @@ function insertionSortReverse(array) {
 
   // For every element in the array (back to front)
   for (let i = n - 2; i >= 0; i--) {
-    // arr[i:n-1] is sorted
+    // arr[i:] is sorted
 
-    let val = array[i];
-    let j;
-
-    for (j = i; j < n - 1 && array[j + 1] < val; j++) {
-      array[j] = array[j + 1];
+    for (let j = i; j < n && array[j] > array[j + 1]; j++) {
+      swap(array, j, j + 1);
     }
-
-    array[j] = val;
   }
 }
