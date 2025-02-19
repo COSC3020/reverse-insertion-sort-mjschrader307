@@ -17,4 +17,6 @@ function insertionSortReverse(array) {
       swap(array, j, j + 1);
     }
   }
+
+  return array;
 }
